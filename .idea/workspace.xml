@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5fa6cd3-c79e-449f-946e-351538add983" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/WienerAdressen.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WienerAdressen/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WienerAdressen/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WienerAdressen/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WienerAdressen/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WienerAdressen/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adressformular/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="e5fa6cd3-c79e-449f-946e-351538add983" name="Changes" comment="23.09 14:02" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,11 +91,32 @@
       <updated>1727076990719</updated>
       <workItem from="1727076992094" duration="145000" />
       <workItem from="1727077158198" duration="128000" />
-      <workItem from="1727092543766" duration="329000" />
+      <workItem from="1727092543766" duration="536000" />
     </task>
+    <task id="LOCAL-00001" summary="23.09 14:02">
+      <option name="closed" value="true" />
+      <created>1727092975289</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727092975289</updated>
+    </task>
+    <task id="LOCAL-00002" summary="23.09 14:02">
+      <option name="closed" value="true" />
+      <created>1727093029102</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727093029102</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="23.09 14:02" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.09 14:02" />
   </component>
 </project>
