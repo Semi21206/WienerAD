@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adressübersicht</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adressformular/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Adressübersicht</h1>
+        {% if addresses %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Straße</th>
+                        <th>Hausnummer</th>
+                        <th>PLZ</th>
+                        <th>Ort</th>
+                        <th>Bundesland</th>
+                        <th>Datum</th>
+                        <th>Aktionen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for address in addresses %}
+                        <tr>
+                            <td>{{ address.strasse }}</td>
+                            <td>{{ address.hausnummer }}</td>
+                            <td>{{ address.plz }}</td>
+                            <td>{{ address.ort }}</td>
+                            <td>{{ address.bundesland }}</td>
+                            <td>{{ address.timestamp|date:"d.m.Y H:i" }}</td>  <!-- Formatierung des Datums -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Es sind keine Adressen gespeichert.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

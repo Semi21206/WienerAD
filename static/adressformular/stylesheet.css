@@ -1,0 +1,61 @@
+/* Grundstil für den Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Helles Hintergrundfarbe */
+    margin: 0;
+    padding: 20px; /* Innenabstand für den Body */
+}
+
+/* Container für das Formular */
+form {
+    display: flex; /* Flexbox aktivieren */
+    flex-direction: column; /* Spaltenanordnung */
+    max-width: 400px; /* Maximale Breite des Formulars */
+    margin: auto; /* Zentriert das Formular */
+    background: #ffffff; /* Weißer Hintergrund für das Formular */
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
+    padding: 20px; /* Innenabstand für das Formular */
+}
+
+/* Stil für die Eingabefelder */
+input[type="text"],
+input[type="number"] {
+    padding: 10px; /* Innenabstand für die Eingabefelder */
+    margin: 10px 0; /* Abstand zwischen den Eingabefeldern */
+    border: 1px solid #ced4da; /* Rahmen für die Eingabefelder */
+    border-radius: 4px; /* Abgerundete Ecken */
+    font-size: 16px; /* Schriftgröße */
+}
+
+/* Stil für den Speichern-Button */
+button {
+    padding: 10px; /* Innenabstand für den Button */
+    margin-top: 10px; /* Abstand über dem Button */
+    background-color: #007bff; /* Blau für den Button */
+    color: white; /* Weiße Schriftfarbe */
+    border: none; /* Kein Rahmen */
+    border-radius: 4px; /* Abgerundete Ecken */
+    cursor: pointer; /* Cursor wird zur Hand */
+    font-size: 16px; /* Schriftgröße */
+    transition: background-color 0.3s; /* Übergangseffekt für Hintergrundfarbe */
+}
+
+/* Hover-Effekt für den Button */
+button:hover {
+    background-color: #0056b3; /* Dunkleres Blau beim Hover */
+}
+
+/* Stil für Fehlermeldungen */
+ul {
+    list-style: none; /* Keine Aufzählungszeichen */
+    padding: 0; /* Kein Innenabstand */
+    margin: 10px 0; /* Abstand über und unter der Liste */
+    color: red; /* Rote Schriftfarbe für Fehlermeldungen */
+}
+
+/* Stil für Datalist */
+datalist {
+    margin: 0; /* Kein Abstand */
+    padding: 0; /* Kein Innenabstand */
+}

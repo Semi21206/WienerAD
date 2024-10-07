@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neue Adresse hinzufügen</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adressformular/stylesheet.css' %}">
+</head>
+<body>
+
+    <!-- Hier wird die Erfolgsmeldung oder Fehlermeldung erscheinen -->
+    <div id="message-box"></div>
+
+    <form id="adresse-form" method="POST" action="/adresse_speichern/">
+        {% csrf_token %}
+        <input 
+            type="text" 
+            name="strasse" 
+            id="strasse" 
+            placeholder="Straße"
+            list="streetnames"
+            onchange="streetnameChange()" 
+        />
+        <!-- Datalist und andere Felder bleiben gleich -->
+        <datalist id="streetnames"></datalist>
+
+        <input 
+            type="text" 
+            name="hausnummer" 
+            id="hausnummer" 
+            placeholder="Hausnummer"
+        />
+        <input 
+            type="number" 
+            min="1010" max="9999"
+            name="plz" 
+            id="plz" 
+            placeholder="PLZ"
+        />
+        <input 
+            type="text" 
+            name="ort" 
+            id="ort" 
+            placeholder="Ort"
+        />
+        <input 
+            type="text" 
+            name="bundesland" 
+            id="bundesland" 
+            placeholder="Bundesland"
+            list="states"
+        />
+
+        <!-- Speichern-Button -->
+        <button type="submit">Adresse speichern</button>
+    </form>
+
+    <script>
+        // Verhindert das Standard-Submit-Verhalten und sendet das Formular per AJAX
+        document.getElementById('adresse-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Verhindert das Standardformular-Submit-Verhalten
+            
+            const formData = new FormData(this);  // Erstelle FormData-Objekt aus dem Formular
+            const csrfToken = '{{ csrf_token }}';  // CSRF Token sicherstellen
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': csrfToken  // CSRF Token hinzufügen
+                }
+            })
+            .then(response => response.json())  // Antwort als JSON parsen
+            .then(data => {
+                const messageBox = document.getElementById('message-box');
+                messageBox.innerHTML = '';  // Vorherige Nachrichten löschen
+
+                if (data.success) {
+                    messageBox.innerHTML = `<p class="success-message">${data.message}</p>`;
+                } else {
+                    // Zeigt Fehlernachrichten aus dem Formular
+                    const errors = data.errors;
+                    for (let field in errors) {
+                        messageBox.innerHTML += `<p class="error-message">${errors[field].join(', ')}</p>`;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Fehler beim Speichern:', error);
+            });
+        });
+    </script>
+
+    <style>
+        /* Erfolgsmeldung und Fehlermeldung designen */
+        .success-message {
+            color: green;
+            padding: 10px;
+            border: 1px solid green;
+            background-color: #dff0d8;
+            margin-bottom: 10px;
+        }
+
+        .error-message {
+            color: red;
+            padding: 10px;
+            border: 1px solid red;
+            background-color: #f2dede;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</body>
+</html>
